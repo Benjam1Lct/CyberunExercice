@@ -1,0 +1,29 @@
+.country-percent-container {
+    margin-bottom: 2rem;
+  }
+  
+  .country-percent-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .country-percent-description {
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .country-percent-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #444;
+  }
+  
+  .country-name,
+  .country-percent {
+    font-weight: 500;
+  }
+  

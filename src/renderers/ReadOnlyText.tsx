@@ -1,16 +1,16 @@
-import React from 'react';
 import { withJsonFormsControlProps } from '@jsonforms/react';
+import '../styles/textFields.css'; // 👈 importer les styles
 
 const ReadOnlyText = ({ data, label, description }: any) => {
   return (
-    <div style={{ display: 'flex', marginBottom: '1rem' }}>
-      <div style={{ flex: 1, fontWeight: 'bold' }}>
+    <div className="readonly-text-container">
+      <div className="readonly-text-label">
         {label}
         {description && (
-          <div style={{ fontSize: '0.8em', color: '#777' }}>{description}</div>
+          <div className="readonly-text-description">{description}</div>
         )}
       </div>
-      <div style={{ flex: 1 }}>{data}</div>
+      <div className="readonly-text-value">{data}</div>
     </div>
   );
 };

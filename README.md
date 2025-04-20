@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# 🚀 Défi Cyberun — JSONForms Lecture Seule
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet répond au challenge proposé par **Cyberun** dans le cadre d’une candidature à un stage de développeur web.
 
-Currently, two official plugins are available:
+L’objectif était de créer une interface en **React + TypeScript** basée sur **JSONForms** (avec **vanilla-renderers uniquement**) pour afficher des données issues d’un schéma JSON, **en lecture seule**, avec une mise en forme personnalisée conforme aux spécifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎯 Objectifs techniques
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Utilisation exclusive des **vanilla-renderers** de JSONForms (pas de `react-renderers`)
+- ✅ Interface 100% **lecture seule** (aucun champ modifiable, aucun bouton)
+- ✅ Mise en forme visuelle adaptée :
+  - 📌 Champs texte simple → 2 colonnes (question / réponse)
+  - 📄 Champs texte multiligne → en bloc pleine largeur
+  - 🏷️ Enum simple/multiple → badges arrondis stylés
+  - 🌍 Liste de pays + pourcentages → affichage clair et lisible
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## ⚙️ Lancer le projet en local
+
+### 1. Cloner le repo
+
+```bash
+git clone https://github.com/Benjam1Lct/CyberunExercice.git
+cd CyberunExercice
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Installer les dépendances
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Lancer le serveur de développement
+
+```bash
+npm run dev
+```
+
+> 📍 Par défaut, le projet s’ouvre sur :  
+> [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🌐 Démo en ligne
+
+Accès direct à la version déployée :  
+🔗 [https://cyberun.benjamin-lecomte.com](https://cyberun.benjamin-lecomte.com)
+
+---
+
+## 🗂️ Organisation du code
+
+```
+src/
+├── json/           # Schéma, UI, données
+│   ├── schema.json
+│   ├── uischema.json
+│   └── data.json
+├── renderers/      # Composants React customisés (lecture seule)
+│   ├── ReadOnlyText.tsx
+│   ├── ReadOnlyMultilineText.tsx
+│   ├── ReadOnlyEnumArray.tsx
+│   └── ReadOnlyCountryPercent.tsx
+├── styles/         # CSS séparé par type de champ
+│   ├── textFields.css
+│   ├── enumFields.css
+│   └── table.css
+```
+
+---
+
+## 🛠️ Stack technique
+
+- ⚛️ React + TypeScript
+- 🧩 JSONForms avec vanilla-renderers
+- ⚡ Vite (serveur rapide & moderne)
+- 🎨 CSS modulaire (par type de composant)
+
+---
+
+## 👨‍💻 Auteur
+
+**Benjamin Lecomte**  
+📍 [https://www.benjamin-lecomte.com](https://www.benjamin-lecomte.com)
+
+---
+
+## ✅ Statut
+
+✔️ Projet terminé et conforme à l’ensemble des consignes fournies par Cyberun.
