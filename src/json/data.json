@@ -1,0 +1,17 @@
+{
+    "user": {
+      "a08": "Benjamin",
+      "a09": "I am a full-stack developer passionate about clean code and learning new technologies."
+    },
+    "item": {
+      "s01": ["vendor", "subcontractor"],
+      "p02": "yes",
+      "i01": [
+        {
+          "country": "France",
+          "percent": 100
+        }
+      ]
+    }
+  }
+  
